@@ -1,0 +1,74 @@
+<p-toast></p-toast>
+
+<div class="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 p-4">
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+
+    <div class="w-full bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 p-6 text-center">
+            <h1 class="text-4xl font-extrabold text-white">&gt; Marketko</h1>
+
+    </div>
+
+    <div class="p-8">
+
+      <h2 class="text-3xl font-extrabold text-center 
+                 bg-clip-text text-transparent 
+                 bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 mb-8">
+        Register
+      </h2>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="space-y-5">
+
+        <div>
+          <label class="block mb-1 font-medium text-gray-700">Username</label>
+          <input pInputText formControlName="name" class="w-full" />
+          <small *ngIf="name.invalid && name.touched" class="text-red-500">
+            Username must be at least 3 characters
+          </small>
+        </div>
+
+        <div>
+          <label class="block mb-1 font-medium text-gray-700">Email</label>
+          <input pInputText type="email" formControlName="email" class="w-full" />
+          <small *ngIf="email.invalid && email.touched" class="text-red-500">
+            Valid email required
+          </small>
+        </div>
+
+        <div class="mb-4" style="position: relative;">
+          <label class="block mb-1 font-medium text-gray-700">Password</label>
+          <p-password 
+            formControlName="password" 
+            [feedback]="true" 
+            [toggleMask]="true" 
+            class="w-full" 
+            inputStyleClass="w-full">
+          </p-password>
+          <small *ngIf="password.invalid && password.touched" class="text-red-500">
+            Password must start with a capital letter and 7+ numbers
+          </small>
+        </div>
+
+       
+
+        <button
+          pButton
+          type="submit"
+          label="Register"
+          [loading]="isCallApi"
+          class="w-full mt-2"
+          [disabled]="registerForm.invalid">
+        </button>
+
+        <p class="text-center text-gray-600 mt-3">
+          Already have an account?
+          <span
+            class="text-blue-500 font-semibold hover:underline cursor-pointer"
+            (click)="goToLogin()">
+           Login
+          </span>
+        </p>
+
+      </form>
+    </div>
+  </div>
+</div>

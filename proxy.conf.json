@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "https://task-api.atcksa.com",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

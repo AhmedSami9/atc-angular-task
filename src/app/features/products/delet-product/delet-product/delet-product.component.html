@@ -1,0 +1,9 @@
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+
+<button pButton
+        icon="pi pi-trash"
+        label="Delete"
+        severity="danger"
+        (click)="confirm()"
+        [disabled]="isDeleting()">
+</button>
