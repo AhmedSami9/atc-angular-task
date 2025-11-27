@@ -3,6 +3,8 @@ import { Component, signal, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoaderService } from './shared/components/Loader/loader.service';
 import { Toast } from "primeng/toast";
+import { environment } from '../environments/environments';
+
 
 @Component({
   selector: 'app-root',
@@ -15,5 +17,8 @@ export class App implements OnInit {
     ngOnInit(): void {
     initFlowbite();
   }
-    constructor(public loader: LoaderService) {}
+    constructor(public loader: LoaderService) {
+       console.log('ENV PROD:', environment);
+    }
 }
+

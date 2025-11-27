@@ -13,6 +13,7 @@ import {
   setClassMetadata,
   ɵɵdefineInjectable
 } from "./chunk-63LVR74E.js";
+import "./chunk-RSS3ODKE.js";
 import {
   __objRest,
   __spreadValues
@@ -4292,32 +4293,31 @@ var AnimationRendererFactory = class {
     this.delegate.componentReplaced?.(componentId);
   }
 };
-
 export {
-  getParentElement,
-  validateStyleProperty,
-  validateWebAnimatableStyleProperty,
-  containsElement,
-  invokeQuery,
-  ENTER_CLASSNAME,
-  LEAVE_CLASSNAME,
-  normalizeKeyframes,
-  camelCaseToDashCase,
-  allowPreviousPlayerStylesMerge,
-  NoopAnimationDriver,
   AnimationDriver,
-  AnimationStyleNormalizer,
-  NoopAnimationStyleNormalizer,
-  WebAnimationsStyleNormalizer,
-  TransitionAnimationPlayer,
-  AnimationEngine,
-  WebAnimationsPlayer,
-  WebAnimationsDriver,
-  createEngine,
-  Animation,
-  BaseAnimationRenderer,
-  AnimationRenderer,
-  AnimationRendererFactory
+  NoopAnimationDriver,
+  Animation as ɵAnimation,
+  AnimationEngine as ɵAnimationEngine,
+  AnimationRenderer as ɵAnimationRenderer,
+  AnimationRendererFactory as ɵAnimationRendererFactory,
+  AnimationStyleNormalizer as ɵAnimationStyleNormalizer,
+  BaseAnimationRenderer as ɵBaseAnimationRenderer,
+  ENTER_CLASSNAME as ɵENTER_CLASSNAME,
+  LEAVE_CLASSNAME as ɵLEAVE_CLASSNAME,
+  NoopAnimationStyleNormalizer as ɵNoopAnimationStyleNormalizer,
+  TransitionAnimationPlayer as ɵTransitionAnimationPlayer,
+  WebAnimationsDriver as ɵWebAnimationsDriver,
+  WebAnimationsPlayer as ɵWebAnimationsPlayer,
+  WebAnimationsStyleNormalizer as ɵWebAnimationsStyleNormalizer,
+  allowPreviousPlayerStylesMerge as ɵallowPreviousPlayerStylesMerge,
+  camelCaseToDashCase as ɵcamelCaseToDashCase,
+  containsElement as ɵcontainsElement,
+  createEngine as ɵcreateEngine,
+  getParentElement as ɵgetParentElement,
+  invokeQuery as ɵinvokeQuery,
+  normalizeKeyframes as ɵnormalizeKeyframes,
+  validateStyleProperty as ɵvalidateStyleProperty,
+  validateWebAnimatableStyleProperty as ɵvalidateWebAnimatableStyleProperty
 };
 /*! Bundled license information:
 
@@ -4329,4 +4329,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-GTCW3Q2V.js.map
+//# sourceMappingURL=browser-VWQ5JFIR.js.map

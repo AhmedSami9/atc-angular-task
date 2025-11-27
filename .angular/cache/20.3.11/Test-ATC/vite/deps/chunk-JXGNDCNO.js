@@ -6,15 +6,15 @@ import {
   PARENT_INSTANCE
 } from "./chunk-FJGBPS3C.js";
 import {
+  Bind
+} from "./chunk-NLO7B3LJ.js";
+import {
   BaseStyle
 } from "./chunk-R2YWLSGB.js";
 import {
   PrimeTemplate,
   SharedModule
 } from "./chunk-ENIGTNIY.js";
-import {
-  Bind
-} from "./chunk-NLO7B3LJ.js";
 import {
   Rt,
   Tt,
@@ -1791,4 +1791,4 @@ export {
   Scroller,
   ScrollerModule
 };
-//# sourceMappingURL=chunk-B3V7BV6A.js.map
+//# sourceMappingURL=chunk-JXGNDCNO.js.map

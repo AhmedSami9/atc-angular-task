@@ -16,11 +16,8 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-  MessageService,
-    provideRouter(routes),
-    {provide : Base_URl,
-      useValue:"/api"
-    }
+  MessageService
+  
     
     ,provideHttpClient(withFetch(),withInterceptors([tokenInterceptor,httpErrorInterceptor,loaderInterceptor])),
     
