@@ -7,11 +7,7 @@ import { catchError, throwError } from 'rxjs';
 export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
   const auth = inject(AuthService);
 
-<<<<<<< HEAD
-  if (req.url.includes('/login') || req.url.includes('egister')) {
-=======
   if (req.url.includes('/login') || req.url.includes('register')) {
->>>>>>> 7ccaa20b961203887fe7b9e9e98608c4e3ecc1dc
     return next(req);
   }
 
