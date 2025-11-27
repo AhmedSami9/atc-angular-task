@@ -1,0 +1,109 @@
+<p-toast></p-toast>
+
+<div class="hidden sm:block card p-6 rounded-lg shadow-lg bg-[#f9fafb] max-w-full mx-auto">
+  <div class="flex items-center justify-between w-full py-3 px-2">
+
+    <h1
+      class="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 text-center center"
+    >
+      &gt; Marketko
+    </h1>
+
+   <div>
+     <button
+    pButton
+    icon="pi pi-sign-out"
+    class="p-button-rounded p-button-text text-gray-600 hover:text-gray-800"
+    (click)="logout()"
+  ></button>
+
+    </div>
+  </div>
+</div>
+
+<div
+  class="block sm:hidden card p-6 rounded-lg shadow-lg bg-[#f9fafb] max-w-full mx-auto text-center"
+>
+  <div class="flex items-center justify-between w-full py-3 px-2">
+
+    <h1
+      class="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 m-0"
+    >
+      &gt; Marketko
+    </h1>
+
+    <div class="flex items-center gap-2">
+
+      <button
+        pButton
+        icon="pi pi-sign-out"
+        class="p-button-rounded p-button-text text-gray-600 hover:text-gray-800"
+        (click)="logout()"
+      ></button>
+
+     
+      
+
+    </div>
+
+  </div>
+
+ 
+</div>
+<div class="card p-6 rounded-lg shadow-lg bg-white max-w-4xl mx-auto mt-6">
+  <div class="mb-4 bg-gradient-to-r from-green-400 to-blue-500 p-4 rounded-t-lg text-white">
+    <h2 class="text-2xl font-bold">Create Product</h2>
+  </div>
+
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+      <div>
+        <label class="font-semibold text-gray-700">Name</label>
+        <input pInputText formControlName="name" class="w-full p-2 rounded border border-gray-300" />
+      </div>
+      <div>
+        <label class="font-semibold text-gray-700">SKU</label>
+        <input pInputText formControlName="sku" class="w-full p-2 rounded border border-gray-300" />
+      </div>
+       <div>
+        <label class="font-semibold text-gray-700">Slug</label>
+        <input pInputText formControlName="slug" class="w-full p-2 rounded border border-gray-300" />
+      </div>
+     
+      <div>
+        <label class="font-semibold text-gray-700">Price</label>
+        <input pInputText type="number" formControlName="price" class="w-full p-2 rounded border border-gray-300" />
+      </div>
+      <div>
+        <label class="font-semibold text-gray-700">Currency</label>
+        <input pInputText formControlName="currency" class="w-full p-2 rounded border border-gray-300" />
+      </div>
+      <div>
+        <label class="font-semibold text-gray-700">Stock</label>
+        <input pInputText type="number" formControlName="stock" class="w-full p-2 rounded border border-gray-300" />
+      </div>
+      <div>
+        <label class="font-semibold text-gray-700">Status</label>
+        <select formControlName="is_active" class="w-full p-2 rounded border border-gray-300">
+          <option [ngValue]="true">Active</option>
+          <option [ngValue]="false">Inactive</option>
+        </select>
+      </div>
+       <div class="md:col-span-2">
+        <label class="font-semibold text-gray-700">Description</label>
+         <textarea 
+    pInputTextarea
+    formControlName="description" 
+    class="w-full p-2 rounded border border-gray-300"
+    rows="4">
+  </textarea>
+      </div>
+    </div>
+
+    <div class="flex gap-3 justify-end mt-6">
+      <button pButton type="button" label="Cancel" class="p-button-secondary" (click)="cancel()"></button>
+      <button pButton type="submit" label="Create" class="p-button-success" [disabled]="productForm.invalid"></button>
+    </div>
+  </form>
+</div>
+

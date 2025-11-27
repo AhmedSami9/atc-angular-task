@@ -7,7 +7,11 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "type": "component"
+        },
+         "@schematics/angular:service": {
+          "type": "service"
         }
       },
       "root": "",
@@ -27,7 +31,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+  "src/styles.scss"
             ]
           },
           "configurations": {
@@ -81,7 +85,12 @@
               }
             ],
             "styles": [
+              "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.scss"
+            ],
+            "scripts": [
+
+              "./node_modules/flowbite/dist/flowbite.min.js"
             ]
           }
         }

@@ -1,0 +1,8 @@
+:host ::ng-deep .row-hover:hover {
+  background-color: #f3f4f6 !important; /* gray-100 */
+  transition: 0.2s ease-in-out;
+}
+
+:host ::ng-deep .row-hover {
+  cursor: pointer !important;
+}
