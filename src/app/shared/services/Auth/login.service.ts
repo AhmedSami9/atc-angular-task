@@ -4,12 +4,13 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { LoginData } from '../../models/auth';
 import { Endpoint } from '../../../core/enums/Endpoints.enum';
+import { environment } from '../../../../environments/environments';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
-  private BASE_Url = inject(Base_URl)
+  private readonly BASE_Url = environment.apiUrl
   private readonly _HttpClient:HttpClient =inject(HttpClient);
    constructor() {}
 

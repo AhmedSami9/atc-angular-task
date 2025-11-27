@@ -10,7 +10,7 @@
           "style": "scss",
           "type": "component"
         },
-         "@schematics/angular:service": {
+        "@schematics/angular:service": {
           "type": "service"
         }
       },
@@ -21,6 +21,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -31,30 +32,22 @@
               }
             ],
             "styles": [
-  "src/styles.scss"
+              "src/styles.scss"
             ]
           },
           "configurations": {
             "production": {
-<<<<<<< HEAD
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environments.ts",
+                  "with": "src/environments/environments.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-=======
-               "fileReplacements": [
-      {
-        "replace": "src/environments/environments.ts",
-        "with": "src/environments/environments.prod.ts"
-      }
-    ],
-              "budgets": [
-                {
-                    "type": "initial",
-    "maximumWarning": "2mb",
-    "maximumError": "5mb"
->>>>>>> 7ccaa20b961203887fe7b9e9e98608c4e3ecc1dc
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -103,7 +96,6 @@
               "src/styles.scss"
             ],
             "scripts": [
-
               "./node_modules/flowbite/dist/flowbite.min.js"
             ]
           }

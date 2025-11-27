@@ -3,12 +3,13 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Base_URl } from '../../tokens/api.token';
 import { Endpoint } from '../../../core/enums/Endpoints.enum';
+import { environment } from '../../../../environments/environments';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
-  private readonly BASE_Url = inject(Base_URl);
+  private readonly BASE_Url = environment.apiUrl
   private readonly _HttpClient: HttpClient = inject(HttpClient);
 
   constructor() {}
