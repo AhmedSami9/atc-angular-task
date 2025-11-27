@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { SpinnerIcon } from 'primeng/icons/spinner';
+import { NgIf } from '@angular/common'
 
 @Component({
   selector: 'app-loader',

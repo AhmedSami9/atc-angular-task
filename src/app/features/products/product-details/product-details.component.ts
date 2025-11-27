@@ -14,7 +14,6 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { LoaderService } from '../../../shared/components/Loader/loader.service';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
-
 @Component({
   selector: 'app-product-details',
   imports: [
@@ -25,9 +24,9 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     PaginatorModule,
     IconFieldModule,
     InputIconModule,
-    TagModule
+    TagModule,
   ],
-   providers: [ConfirmationService, MessageService], 
+  providers: [ConfirmationService, MessageService],
 
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss'],
@@ -36,12 +35,11 @@ export class ProductDetailsComponent implements OnInit {
   private readonly _ActivatedRoute = inject(ActivatedRoute);
   private readonly _ProductsService = inject(ProductsService);
   private readonly _Router = inject(Router);
-     loader = inject(LoaderService);
-      constructor(
+  loader = inject(LoaderService);
+  constructor(
     private confirmationService: ConfirmationService,
     private messageService: MessageService
   ) {}
-
 
   productId: number | null = null;
   product: Product = {} as Product;
@@ -50,15 +48,15 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.getId();
   }
-getId(){
-   this._ActivatedRoute.paramMap.subscribe(params => {
-    const id = params.get('id');
-    if (id) {
-      this.productId = Number(id);
-      this.getProductDetails(this.productId);
-    }
-  });
-}
+  getId() {
+    this._ActivatedRoute.paramMap.subscribe((params) => {
+      const id = params.get('id');
+      if (id) {
+        this.productId = Number(id);
+        this.getProductDetails(this.productId);
+      }
+    });
+  }
   private getProductDetails(id: number) {
     this.isLoading.set(true);
     this._ProductsService.getProduct(id).subscribe({
@@ -70,7 +68,7 @@ getId(){
       error: (err) => {
         console.error(err);
         this.isLoading.set(false);
-      }
+      },
     });
   }
 
@@ -78,31 +76,31 @@ getId(){
     this._Router.navigate(['/products/edit', product.id]);
   }
 
-deleteProduct(product: Product): void {
-  if (!product.id) return;
+  deleteProduct(product: Product): void {
+    if (!product.id) return;
 
-  this.confirmationService.confirm({
-    message: `Are you sure you want to delete ${product.name}?`,
-    accept: () => {
-      this._ProductsService.deleteProduct(product.id).subscribe({
-        next: () => {
-          this.messageService.add({
-            severity: 'success',
-            summary: 'Deleted',
-            detail: `${product.name} has been deleted`
-          });
-          this._Router.navigate(['/dashboard']);
-        },
-        error: (err) => {
-          console.error('Delete failed', err);
-          this.messageService.add({
-            severity: 'error',
-            summary: 'Error',
-            detail: 'Delete failed'
-          });
-        }
-      });
-    }
-  });
-}
+    this.confirmationService.confirm({
+      message: `Are you sure you want to delete ${product.name}?`,
+      accept: () => {
+        this._ProductsService.deleteProduct(product.id).subscribe({
+          next: () => {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Deleted',
+              detail: `${product.name} has been deleted`,
+            });
+            this._Router.navigate(['/dashboard']);
+          },
+          error: (err) => {
+            console.error('Delete failed', err);
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Error',
+              detail: 'Delete failed',
+            });
+          },
+        });
+      },
+    });
+  }
 }

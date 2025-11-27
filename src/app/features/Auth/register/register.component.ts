@@ -8,7 +8,6 @@ import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
-import { takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-register',

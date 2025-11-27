@@ -9,6 +9,7 @@ import { PasswordModule } from 'primeng/password';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { AuthService } from '../../../shared/services/Auth/auth.service';
+import { NgIf } from '@angular/common'
 
 @Component({
   selector: 'app-login',
