@@ -10,6 +10,10 @@ import { CommonModule } from '@angular/common';
 import { CheckboxModule } from 'primeng/checkbox';
 import { LoaderService } from '../../../shared/components/Loader/loader.service';
 import { SelectModule } from 'primeng/select';
+<<<<<<< HEAD
+=======
+import { NgIf } from '@angular/common'
+>>>>>>> 7ccaa20b961203887fe7b9e9e98608c4e3ecc1dc
 
 @Component({
   selector: 'app-edit',

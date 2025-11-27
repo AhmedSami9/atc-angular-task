@@ -8,6 +8,10 @@ import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
+<<<<<<< HEAD
+=======
+import { NgIf } from '@angular/common'
+>>>>>>> 7ccaa20b961203887fe7b9e9e98608c4e3ecc1dc
 
 @Component({
   selector: 'app-product-create',
