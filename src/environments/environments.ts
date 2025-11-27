@@ -1,5 +1,5 @@
 export const environment = {
     
   production: false,
-  apiUrl: 'Api',
+  apiUrl:"https://task-api.atcksa.com/api",
 };
